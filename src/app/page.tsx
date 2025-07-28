@@ -198,10 +198,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#EEEDE7]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#E8E6DE] via-[#E2DFCF] to-[#EBE9E0] py-20 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#E8E6DE] via-[#E2DFCF] to-[#EBE9E0] relative ">
         <div className="absolute inset-0 bg-[#503217] opacity-5"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className=" mx-auto pl-8 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-[#160D05] mb-6 leading-tight">
                 Premium Healthcare Solutions for Every Need
@@ -225,16 +225,14 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
-              <div className="bg-white rounded-2xl  shadow-lg ">
-                <Image
-                  src="https://images.unsplash.com/photo-1664902265139-934219cee42f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8UHJvZmVzc2lvbmFsJTIwTWVkaWNhbCUyMEVxdWlwbWVudHxlbnwwfHwwfHx8MA%3D%3D"
-                  alt="Medical and health products"
-                  width={600}
-                  height={400}
-                  className="w-full h-96 object-cover rounded-lg"
-                />
-              </div>
+            <div className="relative h-96 md:h-full overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1664902265139-934219cee42f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8UHJvZmVzc2lvbmFsJTIwTWVkaWNhbCUyMEVxdWlwbWVudHxlbnwwfHwwfHx8MA%3D%3D"
+                alt="Medical and health products"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#160D05]/20 to-transparent"></div>
             </div>
           </div>
         </div>
@@ -287,24 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Split Banner - Medical Equipment */}
-      <SplitBanner
-        image="https://regalmed.ae/wp-content/uploads/2024/07/Breaking-News-Dubai-Launches-State-of-the-Art-Medical-Equipment.jpg"
-        title="State-of-the-Art Medical Technology"
-        subtitle="Empowering Healthcare Excellence"
-        description="Delivering precision diagnostic instruments and advanced medical devices that meet international standards. Our equipment enables healthcare professionals to provide superior patient care with confidence."
-        ctaText="Discover Technology"
-        ctaLink="/shop?category=lab-equipment"
-        badge="International Standards"
-        features={[
-          "CE & FDA Certified",
-          "Extended Warranty Coverage",
-          "Dedicated Technical Support",
-          "Volume Pricing Available",
-        ]}
-        imagePosition="right"
-        bgColor="bg-white"
-      />
+    
 
       {/* Shop by Category */}
       <section className="py-24 bg-[#E8E6DE]">
@@ -322,7 +303,24 @@ export default function Home() {
 
       {/* Services Showcase */}
       <ServicesShowcase />
-
+  {/* Split Banner - Medical Equipment */}
+  <SplitBanner
+        image="https://regalmed.ae/wp-content/uploads/2024/07/Breaking-News-Dubai-Launches-State-of-the-Art-Medical-Equipment.jpg"
+        title="State-of-the-Art Medical Technology"
+        subtitle="Empowering Healthcare Excellence"
+        description="Delivering precision diagnostic instruments and advanced medical devices that meet international standards. Our equipment enables healthcare professionals to provide superior patient care with confidence."
+        ctaText="Discover Technology"
+        ctaLink="/shop?category=lab-equipment"
+        badge="International Standards"
+        features={[
+          "CE & FDA Certified",
+          "Extended Warranty Coverage",
+          "Dedicated Technical Support",
+          "Volume Pricing Available",
+        ]}
+        imagePosition="left"
+        bgColor="bg-white"
+      />
       {/* Latest Health Products */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

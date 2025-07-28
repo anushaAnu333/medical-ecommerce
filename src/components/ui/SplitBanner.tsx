@@ -30,7 +30,7 @@ export default function SplitBanner({
   bgColor = "bg-[#EEEDE7]",
 }: SplitBannerProps) {
   const ImageSection = (
-    <div className="relative h-96 md:h-full overflow-hidden">
+    <div className="relative  overflow-hidden">
       <Image src={image} alt={title} fill className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#160D05]/20 to-transparent"></div>
     </div>
