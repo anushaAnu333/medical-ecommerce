@@ -7,6 +7,7 @@ import ProductCard from "@/components/ui/ProductCard";
 import ReviewCard from "@/components/ui/ReviewCard";
 import { Product, Review } from "@/types";
 import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/contexts/ToastContext";
 
 interface ProductDetailClientProps {
   product: Product;
@@ -21,6 +22,7 @@ export default function ProductDetailClient({
 }: ProductDetailClientProps) {
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
+  const { addToast } = useToast();
 
   const discountedPrice = product.discount
     ? product.price - (product.price * product.discount) / 100
@@ -34,7 +36,14 @@ export default function ProductDetailClient({
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
-    alert(`Added ${quantity} item(s) to cart!`);
+    addToast({
+      type: "success",
+      title: "Added to Cart!",
+      message: `${quantity} ${quantity === 1 ? "item" : "items"} of ${
+        product.name
+      } added to your cart.`,
+      duration: 3000,
+    });
   };
 
   return (

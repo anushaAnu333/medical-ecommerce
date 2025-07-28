@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Search, Grid, List } from "lucide-react";
 import ProductCard from "@/components/ui/ProductCard";
@@ -624,7 +624,7 @@ const mockProducts: Product[] = [
   },
 ];
 
-export default function Shop() {
+function ShopContent() {
   const searchParams = useSearchParams();
   const [products] = useState<Product[]>(mockProducts);
   const [searchTerm, setSearchTerm] = useState("");
@@ -787,5 +787,13 @@ export default function Shop() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function Shop() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ShopContent />
+    </Suspense>
   );
 }

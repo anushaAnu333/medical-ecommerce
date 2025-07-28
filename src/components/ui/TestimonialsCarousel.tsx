@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -10,7 +11,7 @@ const testimonials = [
     role: "Cardiologist",
     image: "/images/doctor.jpg",
     content:
-      "Medifit has been my go-to source for medical equipment. The quality is exceptional and delivery is always prompt. Highly recommended for healthcare professionals.",
+      "Medi Ecom has been my go-to source for medical equipment. The quality is exceptional and delivery is always prompt. Highly recommended for healthcare professionals.",
     rating: 5,
   },
   {
@@ -28,7 +29,7 @@ const testimonials = [
     role: "ICU Nurse",
     image: "/images/pharmacy.jpg",
     content:
-      "As a nurse, I need reliable medical supplies. Medifit never disappoints. The products are top-quality and the prices are competitive.",
+      "As a nurse, I need reliable medical supplies. Medi Ecom never disappoints. The products are top-quality and the prices are competitive.",
     rating: 5,
   },
   {
@@ -37,7 +38,7 @@ const testimonials = [
     role: "Pediatrician",
     image: "/images/b12-medicine.jpg",
     content:
-      "I've been ordering from Medifit for over 3 years now. The consistency in quality and service is remarkable. They truly understand healthcare needs.",
+      "I've been ordering from Medi Ecom for over 3 years now. The consistency in quality and service is remarkable. They truly understand healthcare needs.",
     rating: 5,
   },
 ];
@@ -83,9 +84,11 @@ export default function TestimonialsCarousel() {
 
             <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#E2DFCF]">
-                <img
+                <Image
                   src={testimonials[currentIndex].image}
                   alt={testimonials[currentIndex].name}
+                  width={80}
+                  height={80}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -113,7 +116,7 @@ export default function TestimonialsCarousel() {
             </div>
 
             <p className="text-lg text-[#8F7D6A] leading-relaxed text-center md:text-left italic">
-              "{testimonials[currentIndex].content}"
+              &ldquo;{testimonials[currentIndex].content}&rdquo;
             </p>
           </div>
 

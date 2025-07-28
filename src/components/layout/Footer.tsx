@@ -168,7 +168,9 @@ export default function Footer() {
               <div className="w-8 h-8 bg-gradient-to-r from-[#D3744A] to-[#503217] rounded-full flex items-center justify-center">
                 <Plus className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-[#EEEDE7]">Medifit</span>
+              <span className="text-xl font-bold text-[#EEEDE7]">
+                Medi Ecom
+              </span>
             </div>
             <p className="text-[#8F7D6A] mb-4">
               Your trusted care now and always. For the best results, align your
@@ -202,7 +204,7 @@ export default function Footer() {
         <div className="border-t border-[#503217] mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-[#8F7D6A] text-sm">
-              © 2024 Medifit. All rights reserved.
+              © 2024 Medi Ecom. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link

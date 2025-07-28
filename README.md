@@ -1,4 +1,4 @@
-# Medifit - Health & Wellness Ecommerce Platform
+# Medi Ecom - Health & Wellness Ecommerce Platform
 
 A modern, full-stack ecommerce website for medical and health products built with Next.js, Prisma, PostgreSQL, and Tailwind CSS.
 
@@ -52,7 +52,7 @@ A modern, full-stack ecommerce website for medical and health products built wit
    Create a `.env` file in the root directory:
 
    ```env
-   DATABASE_URL="postgresql://username:password@localhost:5432/medifit_db"
+   DATABASE_URL="postgresql://username:password@localhost:5432/medi_ecom_db"
    NEXTAUTH_SECRET="your-secret-key-here"
    NEXTAUTH_URL="http://localhost:3000"
    ```
@@ -213,5 +213,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email support@medifit.com or create an issue in this repository.
+For support, email support@medi-ecom.com or create an issue in this repository.
+
 # medical-ecommerce

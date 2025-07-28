@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Search, ShoppingCart, Plus } from "lucide-react";
+import { ShoppingCart, Plus } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
             <div className="w-8 h-8 bg-gradient-to-r from-[#D3744A] to-[#503217] rounded-full flex items-center justify-center shadow-md">
               <Plus className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-[#160D05]">Medifit</span>
+            <span className="text-xl font-bold text-[#160D05]">Medi Ecom</span>
           </Link>
 
           {/* Navigation */}
@@ -46,7 +46,6 @@ export default function Header() {
 
           {/* Icons */}
           <div className="flex items-center space-x-4">
-           
             <Link
               href="/cart"
               className="text-black hover:text-[#160D05] transition-colors duration-200 p-2 rounded-lg hover:bg-[#E2DFCF] relative">

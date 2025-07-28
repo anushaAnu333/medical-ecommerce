@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ShoppingCart, Star } from "lucide-react";
 import { Product } from "@/types";
 import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/contexts/ToastContext";
 
 interface ProductCardProps {
   product: Product;
@@ -16,6 +17,7 @@ export default function ProductCard({
   showButton = true,
 }: ProductCardProps) {
   const { addToCart } = useCart();
+  const { addToast } = useToast();
   const discountedPrice = product.discount
     ? product.price - (product.price * product.discount) / 100
     : product.price;
@@ -94,7 +96,12 @@ export default function ProductCard({
             <button
               onClick={() => {
                 addToCart(product, 1);
-                alert("Product added to cart!");
+                addToast({
+                  type: "success",
+                  title: "Added to Cart!",
+                  message: `${product.name} has been added to your cart.`,
+                  duration: 3000,
+                });
               }}
               className="bg-[#D3744A] text-white p-2 rounded-lg hover:bg-[#503217] transition-colors duration-200">
               <ShoppingCart className="w-4 h-4" />

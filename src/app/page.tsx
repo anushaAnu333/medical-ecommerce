@@ -1,23 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Truck,
-  RefreshCw,
-  CreditCard,
-  Instagram,
-  ShoppingCart,
-} from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import ProductCard from "@/components/ui/ProductCard";
 import CategoryIconGrid from "@/components/ui/CategoryIconGrid";
 import ReviewCard from "@/components/ui/ReviewCard";
 import NewsletterForm from "@/components/ui/NewsletterForm";
 import ImageBanner from "@/components/ui/ImageBanner";
-import BackgroundBanner from "@/components/ui/BackgroundBanner";
 import SplitBanner from "@/components/ui/SplitBanner";
-import CTABanner from "@/components/ui/CTABanner";
 import ServicesShowcase from "@/components/ui/ServicesShowcase";
-import TestimonialsCarousel from "@/components/ui/TestimonialsCarousel";
-import FeaturedProductsBanner from "@/components/ui/FeaturedProductsBanner";
 import FloatingActionButton from "@/components/ui/FloatingActionButton";
 
 // Mock data - in a real app, this would come from the API

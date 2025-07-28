@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Stethoscope, Microscope, Pill, Heart } from "lucide-react";
+import { ArrowRight, Stethoscope, Pill, Heart } from "lucide-react";
 
 const services = [
   {
@@ -55,7 +55,7 @@ export default function ServicesShowcase() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div
               key={service.id}
               className="group bg-white rounded-2xl shadow-lg border border-[#E2DFCF] overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">

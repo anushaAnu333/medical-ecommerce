@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Star, Clock, Shield, Truck } from "lucide-react";
+import { ArrowRight, Star, Shield } from "lucide-react";
 
 interface BackgroundBannerProps {
   image: string;

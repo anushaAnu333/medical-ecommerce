@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star, Shield } from "lucide-react";
+import { ArrowRight, CheckCircle, Star } from "lucide-react";
 
 interface SplitBannerProps {
   image: string;

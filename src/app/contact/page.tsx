@@ -62,7 +62,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Email</h3>
                   <p className="text-gray-600">hello@gmail.com</p>
-                  <p className="text-gray-600">support@medifit.com</p>
+                  <p className="text-gray-600">support@medi-ecom.com</p>
                 </div>
               </div>
 

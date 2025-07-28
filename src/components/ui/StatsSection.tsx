@@ -42,28 +42,29 @@ export default function StatsSection() {
             Trusted by Healthcare Professionals
           </h2>
           <p className="text-xl text-[#8F7D6A] max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust Medifit for their healthcare needs
+            Join thousands of satisfied customers who trust Medi Ecom for their
+            healthcare needs
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-[#E2DFCF] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className={`w-16 h-16 ${stat.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg`}>
+              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-[#E2DFCF] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div
+                className={`w-16 h-16 ${stat.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg`}>
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
-              
+
               <div className="text-4xl font-bold text-[#160D05] mb-2">
                 {stat.number}
               </div>
-              
+
               <h3 className="text-lg font-semibold text-[#160D05] mb-2">
                 {stat.label}
               </h3>
-              
+
               <p className="text-[#8F7D6A] text-sm leading-relaxed">
                 {stat.description}
               </p>
@@ -73,4 +74,4 @@ export default function StatsSection() {
       </div>
     </section>
   );
-} 
+}
