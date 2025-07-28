@@ -14,29 +14,17 @@ export default function NewsletterForm() {
     e.preventDefault();
     setStatus("loading");
 
-    try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
+    // Simulate API call with mock data
+    setTimeout(() => {
+      if (email && email.includes("@")) {
         setStatus("success");
-        setMessage(data.message);
+        setMessage("Successfully subscribed to newsletter! Check your email for the 15% discount code.");
         setEmail("");
       } else {
         setStatus("error");
-        setMessage(data.error);
+        setMessage("Please enter a valid email address.");
       }
-    } catch {
-      setStatus("error");
-      setMessage("Something went wrong. Please try again.");
-    }
+    }, 1000);
   };
 
   return (
