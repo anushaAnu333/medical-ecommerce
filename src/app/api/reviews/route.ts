@@ -1,24 +1,39 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
+
+// Mock data for reviews
+interface Review {
+  id: string;
+  productId: string;
+  content: string;
+  rating: number;
+  userName: string;
+  userRole: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const mockReviews: Review[] = [];
 
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const productId = searchParams.get("productId");
 
-    const where: { productId?: string } = {};
+    let filteredReviews = [...mockReviews];
+
     if (productId) {
-      where.productId = productId;
+      filteredReviews = filteredReviews.filter(
+        (review) => review.productId === productId
+      );
     }
 
-    const reviews = await prisma.review.findMany({
-      where,
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
+    // Sort by createdAt desc
+    filteredReviews.sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
 
-    return NextResponse.json(reviews);
+    return NextResponse.json(filteredReviews);
   } catch (error) {
     console.error("Error fetching reviews:", error);
     return NextResponse.json(
@@ -33,17 +48,20 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { productId, content, rating, userName, userRole } = body;
 
-    const review = await prisma.review.create({
-      data: {
-        productId,
-        content,
-        rating: parseInt(rating),
-        userName,
-        userRole,
-      },
-    });
+    const newReview = {
+      id: (mockReviews.length + 1).toString(),
+      productId,
+      content,
+      rating: parseInt(rating),
+      userName,
+      userRole,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
 
-    return NextResponse.json(review, { status: 201 });
+    mockReviews.push(newReview);
+
+    return NextResponse.json(newReview, { status: 201 });
   } catch (error) {
     console.error("Error creating review:", error);
     return NextResponse.json(

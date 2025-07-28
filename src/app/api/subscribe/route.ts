@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
+
+// Mock data for newsletter subscriptions
+const mockSubscriptions: string[] = [];
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,20 +16,14 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if email already exists
-    const existingSubscription = await prisma.newsletter.findUnique({
-      where: { email },
-    });
-
-    if (existingSubscription) {
+    if (mockSubscriptions.includes(email)) {
       return NextResponse.json(
         { error: "Email already subscribed" },
         { status: 400 }
       );
     }
 
-    await prisma.newsletter.create({
-      data: { email },
-    });
+    mockSubscriptions.push(email);
 
     return NextResponse.json(
       { message: "Successfully subscribed to newsletter" },
